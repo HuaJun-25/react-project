@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+
+}
+
+.card {
+    width: 250px;
+    margin: 5px;
+    padding: 10px;
+    background-color: #424242;
+    transition: all .3s;
+    border-radius: 10px;
+}
+
+.card:hover {
+    box-shadow: 0 0 20px rgb(249, 225, 42);
+    transform: translateY(-5px);
+}
+
+img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.card-title {
+    color: #dfd02c;
+    font-size: 24px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+p {
+    color: #f3f7e5;
+}
+
+.btn {
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #858585;
+    padding: 10px;
+    border-radius: 10px;
+    display: block;
+    /* 超連結a是行內元素，轉成區塊元素才可以設定寬高*/
+    width: 90%;
+    text-align: center;
+    position: absolute;
+    bottom: 5px;
+}
+
+.card-text {
+    margin-bottom: 20px;
+}
+
+.card-body {
+    position: relative;
+    height: 200px;
+    /* padding: 0 20px; */
+
+}

@@ -1,4 +1,4 @@
-import './css/app0805-1.css'
+import '../css/app0805-1.css'
 
 function App() {
     // 一般變數
