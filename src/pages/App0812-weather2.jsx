@@ -30,6 +30,9 @@ const App = () => {
 	// return 裡面要寫js語法要加{ ... }
 	return (
 		<>
+		<div className="wrap">
+
+		
 			{
 				citys.map((citys) => {
 					return (
@@ -91,6 +94,7 @@ const App = () => {
 					)
 				})
 			}
+			</div>
 		</>
 	)
 }
