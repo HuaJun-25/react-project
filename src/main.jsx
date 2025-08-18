@@ -3,17 +3,17 @@ import { createRoot } from 'react-dom/client'
 // import './index.css'
 // import App from './App.jsx'
 // import './sass/all.scss'
-import App from './pages/test-select.jsx'
+import App from './pages/App0818-1.jsx'
 // import App from './MyApp'
-// import { HashRouter } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom'
 
 
 
 createRoot(document.getElementById('root')).render(
   // 嚴謹模式
   <StrictMode>
-    {/* <HashRouter> */}
+    <HashRouter>
       <App />
-    {/* </HashRouter> */}
+    </HashRouter>
   </StrictMode>,
 )
