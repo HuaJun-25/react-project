@@ -1,18 +1,18 @@
 import { useState } from "react"
 
-const CreateForm = ({ todos, setTodos }) => {
+const EditForm = ({ todo, editTodo }) => {
 
-    const [txt, setTxt] = useState('');
+    const [txt, setTxt] = useState(todo.content);
 
     // 把onclick寫成一個函式
-    function addData() {
+    function editData() {
+        // editTodo(todo.id, txt);
         let myInput = document.getElementById("myInput") //取得輸入框位置
         myInput.focus();
         if (txt.trim().length == 0) {
             alert('請輸入內容');
         } else {
-            setTodos([...todos, { content: txt.trim(), id: Math.random(), isCompleted:false, isEdit:false}]);
-            setTxt('') //清除輸入框內容
+            editTodo(todo.id, txt);
         }
     }
 
@@ -20,9 +20,9 @@ const CreateForm = ({ todos, setTodos }) => {
         <>
             <form className='create-form'>
                 <input id="myInput" type="text" placeholder='輸入待辦事項' value={txt} onChange={(e) => {
-                    setTxt(e.target.value)
+                    setTxt(e.target.value.trim())
                 }} />
-                <button type='button' onClick={addData}>加入</button>
+                <button type='button' onClick={editData}>完成</button>
             </form>
         </>
     )
@@ -50,4 +50,4 @@ const CreateForm = ({ todos, setTodos }) => {
 //     )
 // }
 
-export default CreateForm
+export default EditForm
