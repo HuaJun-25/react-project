@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>Document</title>
+    <style>
+        a {
+            text-decoration: none;
+            color: #09a51d;
+        }
+
+        a:hover {
+            background-color: #daddb5;
+        }
+
+        .tipshow {
+            display: none;
+        }
+
+        #tippanel {
+            background-color: #ebebea;
+            padding: 20px;
+            text-align: left;
+            border: 2px solid #909273;
+            position: absolute;
+            z-index: 99;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <h1>Tooltip</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias praesentium perferendis impedit, temporibus
+            dolore fugiat ut atque, porro saepe neque
+            <a href="#">exercitationem <span class="tipshow">內容說明</span>
+            </a> voluptate facilis fugit labore commodi nam quod earum quia hic repellendus repellat reiciendis ea odit
+            voluptatum. Quaerat itaque in omnis ipsum sunt magni quo nobis, earum totam molestiae iste deleniti odit
+            nostrum tempore soluta voluptates quisquam cumque. Neque, veritatis quae odit, omnis repellat ipsa,
+            doloremque vel assumenda 
+            <a href="#">architecto <span class="tipshow">內容說明</span></a>
+            numquam velit ipsum esse natus! Hic, minima non. Doloremque nisi maiores
+            possimus dolores, est omnis, ipsa incidunt quo accusantium quod rem quidem odio architecto obcaecati sit
+            consequatur eligendi saepe minima tenetur modi magni! Debitis aut obcaecati veniam sapiente quisquam
+            incidunt nulla fuga dicta minima, labore, architecto unde. Omnis, doloribus. Totam a quae dicta modi
+            doloribus magnam praesentium ipsam enim 
+            <a href=""><img src="../images/icons8-umbrella-30.png" alt=""><span class="tipshow">圖片說明</span></a>
+            
+            voluptates, facilis officia culpa porro id fuga est? Harum repellat
+            <a href="#">similique <span class="tipshow"><img src="../images/icons8-umbrella-30.png" alt=""></span></a>
+            porro quae amet suscipit minima vero aliquam? Sint, magni. Amet cupiditate rerum dolores. Illo
+            veniam quas ab ipsa alias aspernatur maiores eligendi voluptate, saepe magnam! Numquam quod eum in autem,
+            cumque quae illo libero, facilis corrupti laudantium aut! Fuga labore non ab placeat consequatur commodi a
+            quis culpa corporis cumque et maiores similique, perspiciatis nulla, reprehenderit quidem neque voluptas!
+            Dolorem, quos.
+        </p>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script>
+        $(function () {
+            // has檢查是否有指定id名稱
+            $('a:has(.tipshow)').mouseover(function (e) {
+                $('body').append('<div id="tippanel">' + $(this).children('.tipshow').html() + '</div>')
+                $('#tippanel').css({ top: (e.pageY+10) + 'px', left: (e.pageX+10) + 'px' }).fadeIn('fast')
+            }).mousemove(function(e){
+                $('#tippanel').css({ top: (e.pageY+10) + 'px', left: (e.pageX+10) + 'px' })
+            }).mouseout(function(){
+                $('#tippanel').remove();
+            })
+        })
+    </script>
+</body>
+
+
+</html>

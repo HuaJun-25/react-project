@@ -1,0 +1,25 @@
+.zoom {
+    width: 300px;
+    display: inline-block;
+    border: 2px solid #5f6daa;
+    margin: 100px;
+    overflow: hidden;
+
+    &.imgScale { //與.zoom同一層+&
+        img {
+            transform: scale(1.2);
+        }
+    }
+
+    img {
+        width: 100%;
+        vertical-align: top; // 去掉底部空隙，基準對齊
+        transition: all 0.5s;
+    }
+}
+
+// .imgScale {
+//     img {
+//         transform: scale(1.2);
+//     }
+// }

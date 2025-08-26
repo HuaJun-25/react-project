@@ -1,0 +1,21 @@
+a {
+    text-decoration: none;
+    color: #09a51d;
+}
+
+a:hover {
+    background-color: #daddb5;
+}
+
+.tipshow {
+    display: none;
+}
+
+#tippanel {
+    background-color: #ebebea;
+    padding: 20px;
+    text-align: left;
+    border: 2px solid #909273;
+    position: absolute;
+    z-index: 99;
+}
