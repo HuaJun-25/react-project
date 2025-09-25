@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>Document</title>
+    <style>
+        img {
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 渲染資料區域 -->
+    <div id="app">
+        <div style="font-size:2rem">一般文字style</div>
+        <!-- v-bind 簡化可以不寫，從 : 開始寫 -->
+        <div :style="{fontSize:size}">vue行內樣式綁定</div>
+        <div v-bind:style="{color:isColor?'#eee':'#212121',fontSize:size, backgroundColor: isColor?'green':'yellow'}">背景色綁定布林值</div>
+    </div>
+
+    <!-- vue cdn -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    size: '4rem',
+                    isColor: true
+
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+
+</html>

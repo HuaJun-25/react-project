@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 渲染資料區域 -->
+    <div id="app">
+        <input type="text" v-on:input="inputCount++">
+        <p>文字方塊內容異動次數:{{inputCount}}</p>
+    </div>
+
+    <!-- vue cdn -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const app = Vue.createApp({
+            // data可以是自行更改的詞，但實務上要有意義
+            data(){
+                return {
+                    inputCount: 0
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+
+</html>

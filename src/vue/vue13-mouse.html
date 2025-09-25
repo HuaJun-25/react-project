@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>Document</title>
+    <style>
+        #app div {
+            width: 300px;
+            height: 300px;
+        }
+        #app span{
+            font-weight: bold;
+            /* 字形名稱中間有空白會需要""包 */
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 渲染資料區域 -->
+    <div id="app">
+        <p>滑鼠移動改變顏色</p>
+        <div
+            v-on:mousemove="colorVal=Math.floor(Math.random()*255),colorVal2=Math.floor(Math.random()*255),colorVal3=Math.floor(Math.random()*255)" 
+            :style="{backgroundColor:'rgb(' +colorVal+ ','+colorVal2+','+colorVal3+')'}"
+        ></div>
+        <p>
+            <!-- HSL色彩範圍: 0~360 -->
+             <!-- 0%:黑  100%:白 -->
+            <span>背景色: rgb({{colorVal}},{{colorVal2}},{{colorVal3}})</span>
+        </p>
+    </div>
+
+    <!-- vue cdn -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const app = Vue.createApp({
+            data(){
+                return {
+                    colorVal: 50,
+                    colorVal2: 50,
+                    colorVal3: 50
+
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 渲染資料區域 -->
+    <div id="app">
+        <p v-if="isShow">true</p>
+        <p v-else>false</p>
+
+        <div>
+            <p v-if="score >= 60">及格</p>
+            <p v-else>不及格</p>
+        </div>
+    </div>
+
+    <!-- vue cdn -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    isShow: true,
+                    score: 90
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+
+</html>

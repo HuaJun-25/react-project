@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>Document</title>
+    <style>
+        img {
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 渲染資料區域 -->
+    <div id="app">
+        <div>
+            <figure v-for="a in arr1">
+                <img :src="a.imgUrl" alt="">
+                <figcaption>{{a.imgName}}</figcaption>
+            </figure>
+        </div>
+
+    </div>
+
+    <!-- vue cdn -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const app = Vue.createApp({
+            // data可以是自行更改的詞，但實務上要有意義
+            data(){
+                return {
+                    arr1: [
+                        {
+                            imgName: 'html',
+                            imgUrl: '/public/images2/p1.jpg'
+                        },
+                        {
+                            imgName: 'css',
+                            imgUrl: '/public/images2/p2.jpg'
+                        },
+                        {
+                            imgName: 'js',
+                            imgUrl: '/public/images2/p3.jpg'
+                        }
+                    ]
+                    
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+
+</html>

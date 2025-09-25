@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>Document</title>
+    <style>
+        /*
+        #app {
+            background-color: #212121;
+            color: #eee;
+            font-size: 5rem;
+            width: 300px;
+        }*/
+        .yellowBG{
+            background-color: antiquewhite;
+        }
+        .blueBG {
+            background-color: rgb(215, 227, 250);
+        }
+        .myclass {
+            background-color: rgb(252, 188, 220);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 渲染資料區域 -->
+    <div id="app">
+        <div class="yellowBG">CSS 一般</div>
+        <div v-bind:class="vueClass">CSS類別綁定1</div>
+        <div v-bind:class="{myclass:true}">CSS類別綁定2</div>
+    </div>
+
+    <!-- vue cdn -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const app = Vue.createApp({
+            data(){
+                return {
+                    vueClass: 'blueBG'
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+
+</html>
